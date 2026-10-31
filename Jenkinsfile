@@ -46,7 +46,7 @@ pipeline {
             steps {
                 sh '''
                     for i in $(seq 1 10); do
-                        if curl -fsS http://localhost:5000/health; then
+                        if curl -fsS http://host.docker.internal:5000/health; then
                             echo "API is healthy"
                             exit 0
                         fi
